@@ -1,5 +1,6 @@
 #include <stdio.h>
 void next(int *x, int n);
+//this file is to check next function of subsetsum.c
 
 int main(void){
     int x[6] = {1, 1, 1, 1, 1, 1};
