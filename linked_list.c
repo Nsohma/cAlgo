@@ -13,15 +13,13 @@ int main(void){
     cell *a;
     a = (cell*)malloc(sizeof(cell*));
     a -> element = 1;
-    
-
     return 0;
 }
 
 cell *insert(int x, cell *p, cell *init){
     //if p == NULL , *init.element = x
     //if p != NULL , *p.element = x 
-    cell *new, *memo;
+    cell *new;
     new = (cell*)malloc(sizeof(cell*)); //dynamic memolly allocation and initialize
     new -> element = x;
     if (p == NULL){
@@ -35,4 +33,19 @@ cell *insert(int x, cell *p, cell *init){
     return init;
 }
 
+cell *delete(cell *p, cell *init){
+    cell *memo, *prev;
+    memo = init;
+    if (p == NULL){
+        init = init -> next;
+    } else{
+        while (memo != p){
+            prev = memo;
+            memo = prev -> next;
+        }
+        prev -> next = p;
+    }
+    free(memo);
+    return init;
+}
 
