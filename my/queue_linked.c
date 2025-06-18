@@ -14,7 +14,7 @@ typedef struct {
 void enqueue(int x, queue *Q);
 void dequeue(queue *Q);
 
-int main(void){
+int main(void){ 
     queue *Q;
     cell *prin;
     Q = (queue *)malloc(sizeof(queue));
