@@ -17,11 +17,11 @@ int main(void){
     push(5, init);
     push(6, init);
     pop(init);
-    //pop(init);
-    //while (init -> next != NULL){
-    //    init = init -> next;
-    //    printf("%d\n", init->element);
-    //}
+    pop(init);
+    while (init -> next != NULL){
+        init = init -> next;
+        printf("%d\n", init->element);
+    }
     return 0;
 }
 
