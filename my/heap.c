@@ -11,6 +11,9 @@ void insert(int x, int *A, int *n);
 void upmin(int i, int *A, int n);
 
 int main(void){
+    //realize heap by use array
+    //if A[i] is parent -> children = A[2i+1] and A[2i+2]
+    //left child = A[2i+1] and right child = A[2i+2]
     int A[N];
     int n, i, k, min;
     n=0;
