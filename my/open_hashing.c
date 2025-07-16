@@ -62,6 +62,8 @@ int main(void){
     return 0;
 }
 
+
+
 void insert(char *x, cell **A){
     cell *backet = A[h(x)];
     cell *prev = backet;
