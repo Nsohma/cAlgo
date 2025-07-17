@@ -21,7 +21,6 @@ int main(void){
 void quicksortt(int i, int j, int *A){
     int pv = pivot(i, j, A);
     if (pv == -1) return;
-    if (i == j) return;
     int k = partition(i, j, A[pv], A);
     quicksortt(i, k-1, A);
     quicksortt(k, j, A);
