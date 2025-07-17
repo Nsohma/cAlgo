@@ -1,24 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define N 100
+
 void quicksortt(int i, int j, int *A);
 int partition(int i, int j, int a, int *A);
 int pivot(int i, int j, int *A);
 void swap(int i, int j, int *A);
 
 int main(void){
+    int A[N];
+    for (int i=0; i<10; i++) A[i] = 10 - i;
+    for (int i=0; i<10; i++) printf("A[%d]:%d ", i, A[i]);
+    puts("");
+    quicksortt(0, 9, A);
+    for (int i=0; i<10; i++) printf("A[%d]:%d ", i, A[i]);
     return 0;
 }
 
 void quicksortt(int i, int j, int *A){
     int pv = pivot(i, j, A);
-    partition(i, j, pv, A);
-
-    if (pivot != -1){
-
-    } else{
-
-    }
+    if (pv == -1) return;
+    if (i == j) return;
+    int k = partition(i, j, A[pv], A);
+    quicksortt(i, k-1, A);
+    quicksortt(k, j, A);
 }
 
 int partition(int i, int j, int a, int *A){
@@ -41,10 +47,15 @@ int pivot(int i, int j, int *A){
     int k = i;
     int pv = -1;
     while (k < j+1){
-        if (A[k++] != A[i]){
-            pv = k-1;
+        if (A[k] > A[i]){
+            pv = k;
             break;
         }
+        if (A[i] > A[k]){
+            pv = i;
+            break;
+        }
+        k++;
     }
     return pv;
 }   
