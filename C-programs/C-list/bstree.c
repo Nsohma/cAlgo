@@ -1,17 +1,17 @@
-/* ‚Q•ª’Tõ–Ø‚É‘Î‚·‚éMEMBER, INSERT, MIN, DELETE‚ÌƒvƒƒOƒ‰ƒ€—á
-i’Pƒ‚ÈƒAƒ‹ƒSƒŠƒYƒ€j */
+/* ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚É‘Î‚ï¿½ï¿½ï¿½MEMBER, INSERT, MIN, DELETEï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½iï¿½Pï¿½ï¿½ï¿½ÈƒAï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½j */
 
 #include <stdio.h>
 #include <stdlib.h>
-enum yn {yes, no};         /* —ñ‹“Œ^ƒf[ƒ^yn‚Ì’è‹` */
+enum yn {yes, no};         /* ï¿½ñ‹“Œ^ï¿½fï¿½[ï¿½^ynï¿½Ì’ï¿½` */
 enum LR {LEFT, RIGHT};
-struct node                /* \‘¢‘Ìnode‚ÌéŒ¾ */
+struct node                /* ï¿½\ï¿½ï¿½ï¿½ï¿½nodeï¿½ÌéŒ¾ */
 {
  int element;
  struct node *left;
  struct node *right;
 };
-/* ŠÖ”‚ÌéŒ¾ */
+/* ï¿½Öï¿½ï¿½ÌéŒ¾ */
 enum yn member(int x, struct node *init);
 struct node *insert(int x, struct node *init);
 int min(struct node *init);
@@ -20,8 +20,8 @@ struct node *off(struct node *p);
 void printpre(struct node *p);
 void inorder(struct node *p);
 
-main()
-/* ‚Q•ª’Tõ–Ø‚Ìˆ—‚ÌƒeƒXƒgƒvƒƒOƒ‰ƒ€ */
+int main()
+/* ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚Ìï¿½ï¿½ï¿½ï¿½Ìƒeï¿½Xï¿½gï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ */
 {
  struct node *init;
  int i, x;
@@ -67,86 +67,86 @@ main()
 }
 
 enum yn member(int x, struct node *init)
-/* init‚ªŽw‚·‚Q•ª’Tõ–Ø‚Éx‚Ì‘¶Ý‚ð”»’è */
+/* initï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚ï¿½xï¿½Ì‘ï¿½ï¿½Ý‚ð”»’ï¿½ */
 {
  struct node *q;
 
- q=init;                   /* ªinit‚©‚ç’TõŠJŽn */
+ q=init;                   /* ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Jï¿½n */
  while(q!=NULL)
    {
-    if(q->element == x) return(yes);    /* x‚ð”­Œ© */
+    if(q->element == x) return(yes);    /* xï¿½ð”­Œï¿½ */
     if(q->element < x)  q = q->right;
     else q = q->left;
    }
- return(no);               /* x‘¶Ý‚¹‚¸ */
+ return(no);               /* xï¿½ï¿½ï¿½Ý‚ï¿½ï¿½ï¿½ */
 }
 
 struct node *insert(int x, struct node *init)
-/* init‚ªŽw‚·‚Q•ª’Tõ–Ø‚Éx‚ð‘}“ü‚µAinit‚ðXV */
+/* initï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚ï¿½xï¿½ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½Ainitï¿½ï¿½ï¿½Xï¿½V */
 {
  struct node *p, *q, *r;
 
- p=(struct node *)malloc(sizeof(struct node)); /* V‚µ‚¢ƒ|ƒCƒ“ƒ^ */
- q=init;                   /* ªinit‚©‚ç’TõŠJŽn */
+ p=(struct node *)malloc(sizeof(struct node)); /* ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ */
+ q=init;                   /* ï¿½ï¿½initï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Jï¿½n */
  if(init==NULL) init=p;
  while(q!=NULL)
    {
-    if(q->element == x) {free(p); return(init);}  /* x‚Í‚·‚Å‚É‘¶Ý */
+    if(q->element == x) {free(p); return(init);}  /* xï¿½Í‚ï¿½ï¿½Å‚É‘ï¿½ï¿½ï¿½ */
     r = q;
-    if(q->element < x)     /* ‰E‚ÌŽq‚Ö */
+    if(q->element < x)     /* ï¿½Eï¿½ÌŽqï¿½ï¿½ */
       {
        q = q->right;
        if(q==NULL) r->right = p;
       }
-    else                   /* ¶‚ÌŽq‚Ö */
+    else                   /* ï¿½ï¿½ï¿½ÌŽqï¿½ï¿½ */
       {
        q = q->left;
        if(q==NULL) r->left = p;
       }
    }
- p->element = x;           /* x‚ð‘}“ü */
+ p->element = x;           /* xï¿½ï¿½}ï¿½ï¿½ */
  p->left = p->right = NULL;
  return(init);
 }
 
 int min(struct node *init)
-/* init‚ªŽw‚·‚Q•ª’Tõ–Ø‚ÌÅ¬—v‘f‚ðo—Í */
+/* initï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚ÌÅï¿½ï¿½vï¿½fï¿½ï¿½ï¿½oï¿½ï¿½ */
 {
  struct node *q, *r;
 
- q=init;                   /* ª‚©‚ç¶’[‚Ì˜H‚ð‰º‚ª‚é */
- if(q==NULL) {printf("Error: Tree is empty.\n"); exit(1);} /* –Ø‚Í‹ó */
+ q=init;                   /* ï¿½ï¿½ï¿½ï¿½ï¿½ç¶ï¿½[ï¿½Ì˜Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+ if(q==NULL) {printf("Error: Tree is empty.\n"); exit(1);} /* ï¿½Ø‚Í‹ï¿½ */
  while(q!=NULL) 
    {
     r = q; q = q->left;
    }
- return(r->element);       /* Œ‹‰Ê‚ð•Ô‚· */
+ return(r->element);       /* ï¿½ï¿½ï¿½Ê‚ï¿½Ô‚ï¿½ */
 }
 
 struct node *delete(int x, struct node *init)
-/* init‚ªŽw‚·‚Q•ª’Tõ–Ø‚©‚ç—v‘fx‚ðœ‹Ž‚µAinit‚ÌXV */
+/* initï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Qï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ø‚ï¿½ï¿½ï¿½vï¿½fxï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ainitï¿½ÌXï¿½V */
 {
- struct node *q, *r, *p;   /* q‚Í’Tõ’†‚Ìƒ|ƒCƒ“ƒ^Ar‚Í‚»‚Ìe */
- int side;                 /* side==1: r‚Ì‰E‚ÌŽq‚ªqA0: ¶‚ÌŽq‚ªq */
+ struct node *q, *r, *p;   /* qï¿½Í’Tï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½Arï¿½Í‚ï¿½ï¿½Ìe */
+ int side;                 /* side==1: rï¿½Ì‰Eï¿½ÌŽqï¿½ï¿½qï¿½A0: ï¿½ï¿½ï¿½ÌŽqï¿½ï¿½q */
 
- q=init;                   /* ª‚©‚ç’Tõ‚ÌŠJŽn */
+ q=init;                   /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½ÌŠJï¿½n */
  while(q!=NULL)
    {
-    if(q->element == x)    /* x‚Ì”­Œ© */
+    if(q->element == x)    /* xï¿½Ì”ï¿½ï¿½ï¿½ */
       {
-       p=off(q);           /* x‚ÌƒZƒ‹q‚ðœ‹Ž‚µAq‚Ì•”•ª–Ø‚ðXV */
-       if(p==NULL)         /* •”•ª–Ø‚Í‹ó */
+       p=off(q);           /* xï¿½ÌƒZï¿½ï¿½qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aqï¿½Ì•ï¿½ï¿½ï¿½ï¿½Ø‚ï¿½ï¿½Xï¿½V */
+       if(p==NULL)         /* ï¿½ï¿½ï¿½ï¿½ï¿½Ø‚Í‹ï¿½ */
          {
-          if(q==init) init=NULL;  /* q‚ªªinit‚Å‚ ‚éê‡ */
-          else             /* ‚»‚Ì‘¼‚Ìê‡ */
+          if(q==init) init=NULL;  /* qï¿½ï¿½ï¿½ï¿½initï¿½Å‚ï¿½ï¿½ï¿½ê‡ */
+          else             /* ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½Ìê‡ */
             {
              if(side==1) r->right = NULL;
              else r->left = NULL;
             }
          }
-       return(init);       /* I—¹ */
+       return(init);       /* ï¿½Iï¿½ï¿½ */
       }
-    r=q;                   /* ’Tõ‚ð‘±‚¯‚é */
+    r=q;                   /* ï¿½Tï¿½ï¿½ï¿½ð‘±‚ï¿½ï¿½ï¿½ */
     if(r->element < x) {q = r->right; side=1;}
     else {q = r->left; side=0;}  
    }
@@ -154,23 +154,23 @@ struct node *delete(int x, struct node *init)
 }
 
 struct node *off(struct node *p)
-/* ƒ|ƒCƒ“ƒ^p‚ªŽw‚·ß“_‚ðœ‹ŽAp‚Ì•”•ª–Ø‚ðXV */
+/* ï¿½|ï¿½Cï¿½ï¿½ï¿½^pï¿½ï¿½ï¿½wï¿½ï¿½ï¿½ß“_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Apï¿½Ì•ï¿½ï¿½ï¿½ï¿½Ø‚ï¿½ï¿½Xï¿½V */
 {
- struct node *q, *r, *s;  /* q‚Í’Tõ’†‚Ìƒ|ƒCƒ“ƒ^Ar‚Í‚»‚ÌeAs‚Ír‚Ìe */
+ struct node *q, *r, *s;  /* qï¿½Í’Tï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½Arï¿½Í‚ï¿½ï¿½Ìeï¿½Asï¿½ï¿½rï¿½Ìe */
  int side;
 
- if(p->left==NULL && p->right==NULL) return(NULL);  /* p‚ÌŽq‚Í‹¤‚É‹ó */
- if(p->left==NULL || p->right==NULL)  /* p‚ÌŽq‚Ìˆê•û‚ª‹ó */
+ if(p->left==NULL && p->right==NULL) return(NULL);  /* pï¿½ÌŽqï¿½Í‹ï¿½ï¿½É‹ï¿½ */
+ if(p->left==NULL || p->right==NULL)  /* pï¿½ÌŽqï¿½Ìˆï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
    {
-    if(p->left == NULL) q=p->right;   /* ‹ó‚Å‚È‚¢•û‚ðp‚Öã‚°‚é */
+    if(p->left == NULL) q=p->right;   /* ï¿½ï¿½Å‚È‚ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Öã‚°ï¿½ï¿½ */
     else q=p->left;   
     p->element = q->element;
     p->left = q->left;
     p->right = q->right;
     return(p);
    }
- s=p; side=1;              /* p‚ÌŽq‚Í‹¤‚É‘¶Ý */
- r = s->right;             /* p‚Ì‰E‚Ì•”•ª–Ø‚ÌÅ¬—v‘f‚ð’Tõ */
+ s=p; side=1;              /* pï¿½ÌŽqï¿½Í‹ï¿½ï¿½É‘ï¿½ï¿½ï¿½ */
+ r = s->right;             /* pï¿½Ì‰Eï¿½Ì•ï¿½ï¿½ï¿½ï¿½Ø‚ÌÅï¿½ï¿½vï¿½fï¿½ï¿½Tï¿½ï¿½ */
  q = r->left;
  while(q!=NULL) 
    {
@@ -178,8 +178,8 @@ struct node *off(struct node *p)
     r = q; q = r->left;
    }
  p->element = r->element;
- r=off(r);                 /* Å¬—v‘fr‚Ìœ‹ŽGÄ‹A“IŽÀs */
- if(r==NULL)               /* r‚ª‹ó‚Ìê‡ */
+ r=off(r);                 /* ï¿½Åï¿½ï¿½vï¿½frï¿½Ìï¿½ï¿½ï¿½ï¿½Gï¿½Ä‹Aï¿½Iï¿½ï¿½ï¿½s */
+ if(r==NULL)               /* rï¿½ï¿½ï¿½ï¿½Ìê‡ */
    {
     if(side==1) s->right = NULL;
     else s->left = NULL;
@@ -201,9 +201,10 @@ void printpre(struct node *p)
 void inorder(struct node *p) 
 /* Print all children of node *p in inorder. */
 {
- if(p->left != NULL) inorder(p->left);      /* ¶‚ÌŽq‘·‚Ì‚È‚¼‚è */
+  if (p == NULL) return;
+ inorder(p->left);     
  printf("p = %p, element = %d, left = %p, right = %p\n", 
-         p, p->element, p->left, p->right); /* p‚ªŽw‚·ß“_‚Ìo—Í */
- if(p->right != NULL) inorder(p->right);    /* ‰E‚ÌŽq‘·‚Ì‚È‚¼‚è */
+         p, p->element, p->left, p->right);
+ inorder(p->right);   
  return;  
 }

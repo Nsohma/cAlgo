@@ -1,9 +1,9 @@
-/* ƒq[ƒv‚É‚¨‚¯‚éDELETEMIN‚ÆINSERT‚ÌƒvƒƒOƒ‰ƒ€—á */
+/* ï¿½qï¿½[ï¿½vï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½DELETEMINï¿½ï¿½INSERTï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 #include <stdio.h>
 #include <stdlib.h>
-#define N 500                 /* ”z—ñA‚ÌÅ‘åƒTƒCƒY */
-/* ŠÖ”‚ÌéŒ¾ */
+#define N 500                 /* ï¿½zï¿½ï¿½Aï¿½ÌÅ‘ï¿½Tï¿½Cï¿½Y */
+/* ï¿½Öï¿½ï¿½ÌéŒ¾ */
 void insert(int x, int *A, int *n);
 int deletemin(int *A, int *n);
 void upmin(int i, int *A, int n);
@@ -11,7 +11,7 @@ void downmin(int i, int *A, int n);
 void swap(int i, int j, int *A);
 
 main()
-/* ƒq[ƒvA[0],...,A[n-1]‚É‘Î‚·‚éƒeƒXƒgƒvƒƒOƒ‰ƒ€ */
+/* ï¿½qï¿½[ï¿½vA[0],...,A[n-1]ï¿½É‘Î‚ï¿½ï¿½ï¿½eï¿½Xï¿½gï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ */
 {
  int A[N];
  int n, i, k, min;
@@ -35,69 +35,69 @@ main()
 }
 
 void insert(int x, int *A, int *n)
-/* ƒq[ƒvA[0],...,A[n-1]‚ÖV‚µ‚¢—v‘fx‚Ì‘}“ü; n=n+1 */
+/* ï¿½qï¿½[ï¿½vA[0],...,A[n-1]ï¿½ÖVï¿½ï¿½ï¿½ï¿½ï¿½vï¿½fxï¿½Ì‘}ï¿½ï¿½; n=n+1 */
 {
  int n1;
 
- n1=*n;                          /* n‚Ì’l‚ğ‰¼’u‚« */
+ n1=*n;                          /* nï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ */
  if(n1>=N) {printf("Error: Heap A is full.\n"); exit(1);}
-                                 /* Œë‚èƒ`ƒFƒbƒN: A‚Í–”t */
- A[n1]=x;                        /* ––”ö‚Ö‚˜‚ğ’u‚­ */
- upmin(n1, A, n1+1);             /* ã‚Ö‚ÌC³ */
- *n=n1+1;                        /* n‚ÌXV */
+                                 /* ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N: Aï¿½Í–ï¿½ï¿½t */
+ A[n1]=x;                        /* ï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½ï¿½ï¿½uï¿½ï¿½ */
+ upmin(n1, A, n1+1);             /* ï¿½ï¿½Ö‚ÌCï¿½ï¿½ */
+ *n=n1+1;                        /* nï¿½ÌXï¿½V */
  return;
 }
 
 int deletemin(int *A, int *n)
-/* ƒq[ƒvA[0],...,A[n-1]‚©‚çÅ¬—v‘fA[0]‚Ìo—Í‚Æœ‹; n=n-1 */
+/* ï¿½qï¿½[ï¿½vA[0],...,A[n-1]ï¿½ï¿½ï¿½ï¿½Åï¿½ï¿½vï¿½fA[0]ï¿½Ìoï¿½Í‚Æï¿½ï¿½ï¿½; n=n-1 */
 {
  int min, n1;
 
- n1=*n;                           /* n‚Ì’l‚ğ‰¼’u‚« */
- if(n1<1) {printf("Error: Heap is empty.\n"); exit(1);} /* Œë: A‚Í‹ó */
- min=A[0]; A[0]=A[n1-1];          /* A[0]‚Ìo—Í‚ÆA[n-1]‚ÌˆÚ“® */
- if(n1>1) downmin(0, A, n1-1);    /* ƒq[ƒvğŒ‚Ì‰ñ•œ‚Ì‚½‚ß‰º‚Ö */
- *n=n1-1;                         /* n‚ÌXV */
+ n1=*n;                           /* nï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ */
+ if(n1<1) {printf("Error: Heap is empty.\n"); exit(1);} /* ï¿½ï¿½: Aï¿½Í‹ï¿½ */
+ min=A[0]; A[0]=A[n1-1];          /* A[0]ï¿½Ìoï¿½Í‚ï¿½A[n-1]ï¿½ÌˆÚ“ï¿½ */
+ if(n1>1) downmin(0, A, n1-1);    /* ï¿½qï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ñ•œ‚Ì‚ï¿½ï¿½ß‰ï¿½ï¿½ï¿½ */
+ *n=n1-1;                         /* nï¿½ÌXï¿½V */
  return(min);
 }
 
 void upmin(int i, int *A, int n)
-/* A[i]‚©‚çã•û‚ÖAƒq[ƒvğŒ‰ñ•œ‚Ì‚½‚ßswap‘€ì‚ğ“K—p */
+/* A[i]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÖAï¿½qï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ñ•œ‚Ì‚ï¿½ï¿½ï¿½swapï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½p */
 {
  int j;
 
- if(i<0 || i>=n)                 /* Œë‚èƒ`ƒFƒbƒN */
+ if(i<0 || i>=n)                 /* ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N */
    {printf("Illegal element i=%d for n=%d\n", i, n); exit(1);}
- if(i==0) return;                /* ª‚Ö“’B‚·‚ê‚ÎI—¹ */
- j=(i-1)/2;                      /* i‚Ìe */
- if(A[j]>A[i])                   /* i‚Æj‚ÌŒğŠ· */
+ if(i==0) return;                /* ï¿½ï¿½ï¿½Ö“ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ÎIï¿½ï¿½ */
+ j=(i-1)/2;                      /* iï¿½Ìe */
+ if(A[j]>A[i])                   /* iï¿½ï¿½jï¿½ÌŒï¿½ï¿½ï¿½ */
    {
     swap(i, j, A); 
-    upmin(j, A, n);              /* j‚Ìã•û‚ÖÄ‹A“IÀs */
+    upmin(j, A, n);              /* jï¿½Ìï¿½ï¿½ï¿½ÖÄ‹Aï¿½Iï¿½ï¿½ï¿½s */
    }
  return;
 }
 
 void downmin(int i, int *A, int n)
-/* A[i]‚©‚ç‰º•û‚ÖAƒq[ƒvğŒ‰ñ•œ‚Ì‚½‚ß‚Ìswap‘€ì‚ğ“K—p */
+/* A[i]ï¿½ï¿½ï¿½ç‰ºï¿½ï¿½ï¿½ÖAï¿½qï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ñ•œ‚Ì‚ï¿½ï¿½ß‚ï¿½swapï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½p */
 {
  int j;
 
- if(i<0 || i>=n)                 /* Œë‚èƒ`ƒFƒbƒN */
+ if(i<0 || i>=n)                 /* ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N */
    { printf("Illegal element i=%d for n=%d\n", i, n); exit(1);}
- j=2*i+1;                        /* i‚Ì¶‚Ìq */
+ j=2*i+1;                        /* iï¿½Ìï¿½ï¿½Ìq */
  if(j>=n) return;
- if(j+1<n && A[j]>A[j+1]) j=j+1; /* j: i‚Ìq‚Å¬‚³‚È’l‚ğ‚Â•û */
- if(A[j]<A[i])                   /* i‚Æj‚ÌŒğŠ· */
+ if(j+1<n && A[j]>A[j+1]) j=j+1; /* j: iï¿½Ìqï¿½Åï¿½ï¿½ï¿½ï¿½È’lï¿½ï¿½ï¿½ï¿½ï¿½Â•ï¿½ */
+ if(A[j]<A[i])                   /* iï¿½ï¿½jï¿½ÌŒï¿½ï¿½ï¿½ */
    {
     swap(i, j, A);
-    downmin(j, A, n);            /* j‚Ì‰º•û‚ÖÄ‹A“IÀs */
+    downmin(j, A, n);            /* jï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ÖÄ‹Aï¿½Iï¿½ï¿½ï¿½s */
    }
  return;
 }
 
 void swap(int i, int j, int *A)
-/* A[i]‚ÆA[j]‚ÌŒğŠ· */
+/* A[i]ï¿½ï¿½A[j]ï¿½ÌŒï¿½ï¿½ï¿½ */
 {
  int temp;
  temp=A[i]; A[i]=A[j]; A[j]=temp;

@@ -1,24 +1,24 @@
-/* ŠO•”ƒnƒbƒVƒ…–@‚ÌƒvƒƒOƒ‰ƒ€—á */
+/* ï¿½Oï¿½ï¿½ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½@ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
-#include <stdio.h>    /* •W€“üo—Í‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ */
-#include <stdlib.h>   /* •W€ƒ‰ƒCƒuƒ‰ƒŠ‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹ */
-#include <string.h>   /* •¶š—ñƒ‰ƒCƒuƒ‰ƒŠ‚Ìƒwƒbƒ_ƒtƒ@ƒCƒ‹ */
-#define B 4          /* ƒoƒPƒbƒg” */
-#define W 6           /* Œê’· */
-enum yn {yes, no};    /* —ñ‹“Œ^ƒf[ƒ^yn‚Ì’è‹` */
-struct cell           /* \‘¢‘Ìcell‚Ì’è‹` */
+#include <stdio.h>    /* ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Í‚Ìƒwï¿½bï¿½_ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Çï¿½ï¿½ï¿½ */
+#include <stdlib.h>   /* ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Ìƒwï¿½bï¿½_ï¿½tï¿½@ï¿½Cï¿½ï¿½ */
+#include <string.h>   /* ï¿½ï¿½ï¿½ï¿½ï¿½ñƒ‰ƒCï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Ìƒwï¿½bï¿½_ï¿½tï¿½@ï¿½Cï¿½ï¿½ */
+#define B 4          /* ï¿½oï¿½Pï¿½bï¿½gï¿½ï¿½ */
+#define W 6           /* ï¿½ê’· */
+enum yn {yes, no};    /* ï¿½ñ‹“Œ^ï¿½fï¿½[ï¿½^ynï¿½Ì’ï¿½` */
+struct cell           /* ï¿½\ï¿½ï¿½ï¿½ï¿½cellï¿½Ì’ï¿½` */
 {
  char name[W+1];
  struct cell *next;
 };
-/* ŠÖ”‚ÌéŒ¾ */
+/* ï¿½Öï¿½ï¿½ÌéŒ¾ */
 void insert(char *x, struct cell **A);
 void delete(char *x, struct cell **A);
 enum yn member(char *x, struct cell **A);
 int h(char *x);
 
-main()  
-/* ŠO•”ƒnƒbƒVƒ…–@‚ÌƒeƒXƒgƒvƒƒOƒ‰ƒ€ */
+int main()  
+/* ï¿½Oï¿½ï¿½ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½@ï¿½Ìƒeï¿½Xï¿½gï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ */
 {
  struct cell *A[B], *q;
  int j;
@@ -69,20 +69,20 @@ main()
 }
 
 void insert(char *x, struct cell **A)
-/* ƒnƒbƒVƒ…•\A‚Ö•¶š—ñx‚Ì‘}“ü */
+/* ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½\Aï¿½Ö•ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Ì‘}ï¿½ï¿½ */
 {
  int k;
  struct cell *p, *q, *r;
 
- k=h(x);                         /* x‚Ì“ü‚éƒoƒPƒbƒg”Ô† */
- q=A[k];                         /* ƒoƒPƒbƒgk“à‚Ì’Tõ */
- p=(struct cell *)malloc(sizeof(struct cell)); /* V‚µ‚¢ƒ|ƒCƒ“ƒ^‚ÌŠl“¾ */
+ k=h(x);                         /* xï¿½Ì“ï¿½ï¿½ï¿½oï¿½Pï¿½bï¿½gï¿½Ôï¿½ */
+ q=A[k];                         /* ï¿½oï¿½Pï¿½bï¿½gkï¿½ï¿½ï¿½Ì’Tï¿½ï¿½ */
+ p=(struct cell *)malloc(sizeof(struct cell)); /* ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ÌŠlï¿½ï¿½ */
  if(q==NULL) A[k]=p;
  else
    {
-    while(q != NULL)             /* x‚Ì‘¶İ‚Ìƒ`ƒFƒbƒN */
+    while(q != NULL)             /* xï¿½Ì‘ï¿½ï¿½İ‚Ìƒ`ï¿½Fï¿½bï¿½N */
       {  
-       if(strcmp(q->name, x)==0) /* x‚Í‚·‚Å‚É‘¶İ */
+       if(strcmp(q->name, x)==0) /* xï¿½Í‚ï¿½ï¿½Å‚É‘ï¿½ï¿½ï¿½ */
         {
          free(p); return; 
         } 
@@ -90,49 +90,50 @@ void insert(char *x, struct cell **A)
       }
     r->next=p;
    }
- strcpy(p->name, x);            /* x‚Ì‘}“ü */
+ strncpy(p->name, x, W);  
+ p->name[W] = '\0';          /* xï¿½Ì‘}ï¿½ï¿½ */
  p->next=NULL;
  return;
 }
 
 void delete(char *x, struct cell **A)
-/* ƒnƒbƒVƒ…•\A‚©‚ç•¶š—ñx‚Ìœ‹ */
+/* ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½\Aï¿½ï¿½ï¿½ç•¶ï¿½ï¿½ï¿½ï¿½xï¿½Ìï¿½ï¿½ï¿½ */
 {
  int k;
  struct cell *q, *r;
 
- k=h(x);                         /* x‚ÌƒnƒbƒVƒ…ŠÖ”’l */
- q=A[k];                         /* ƒoƒPƒbƒgk“à‚Åx‚Ì’Tõ */
+ k=h(x);                         /* xï¿½Ìƒnï¿½bï¿½Vï¿½ï¿½ï¿½Öï¿½ï¿½l */
+ q=A[k];                         /* ï¿½oï¿½Pï¿½bï¿½gkï¿½ï¿½ï¿½ï¿½xï¿½Ì’Tï¿½ï¿½ */
  r=NULL;
  while(q != NULL) 
    {
-    if(strcmp(q->name, x)==0)    /* x‚ğ”­Œ© */
+    if(strcmp(q->name, x)==0)    /* xï¿½ğ”­Œï¿½ */
       {
-       if(r==NULL) A[k]=q->next; /* x‚Ìœ‹ */
+       if(r==NULL) A[k]=q->next; /* xï¿½Ìï¿½ï¿½ï¿½ */
        else r->next=q->next;
-       free(q); return;               /* ì‹ÆI—¹ */
+       free(q); return;               /* ï¿½ï¿½ÆIï¿½ï¿½ */
       }
     r=q; q=q->next;
    }
- return;                         /* x‚Í‘¶İ‚¹‚¸ */
+ return;                         /* xï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½ï¿½ */
 }
 
 enum yn member(char *x, struct cell **A)
-/* ƒnƒbƒVƒ…•\A‚É•¶š—ñx‚Ì‘¶İ”»’è */
+/* ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½\Aï¿½É•ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Ì‘ï¿½ï¿½İ”ï¿½ï¿½ï¿½ */
 {
  struct cell *q, *r;
 
- q=A[h(x)];                      /* ƒoƒPƒbƒgh(x)“à‚Åx‚Ì’Tõ */
+ q=A[h(x)];                      /* ï¿½oï¿½Pï¿½bï¿½gh(x)ï¿½ï¿½ï¿½ï¿½xï¿½Ì’Tï¿½ï¿½ */
  while(q != NULL) 
    {
-    if(strcmp(q->name, x) == 0) return(yes);     /* x‚ğ”­Œ© */
+    if(strcmp(q->name, x) == 0) return(yes);     /* xï¿½ğ”­Œï¿½ */
     q=q->next;
    }
- return(no);                     /* x‚Í‘¶İ‚¹‚¸ */
+ return(no);                     /* xï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½ï¿½ */
 }
 
 int h(char *x)
-/* ƒnƒbƒVƒ…ŠÖ”’lh(x)‚ÌŒvZ */
+/* ï¿½nï¿½bï¿½Vï¿½ï¿½ï¿½Öï¿½ï¿½lh(x)ï¿½ÌŒvï¿½Z */
 {
  int i, hash;
 

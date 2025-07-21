@@ -1,22 +1,22 @@
-/* ƒq[ƒvƒ\[ƒg‚ÌƒvƒƒOƒ‰ƒ€—á */
+/* ï¿½qï¿½[ï¿½vï¿½\ï¿½[ï¿½gï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #define N 500        /* The max size of array A. */
-void heapsort(int *A, int n);
+void heapsortt(int *A, int n);
 void heapify(int *A, int n);
 void downmax(int i, int *A, int n);
 int deletemax(int *A, int n);
 void swap(int i, int j, int *A);
 
 main()
-/* ƒq[ƒvƒ\[ƒg‚ÌƒeƒXƒgƒvƒƒOƒ‰ƒ€ */
+/* ï¿½qï¿½[ï¿½vï¿½\ï¿½[ï¿½gï¿½Ìƒeï¿½Xï¿½gï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ */
 {
  int A[N];
  int n, i;
  FILE *file;
 
- file=fopen("sortdata", "r");   /* ƒf[ƒ^‚Ì“Çž‚Ý */
+ file=fopen("sortdata", "r");   /* ï¿½fï¿½[ï¿½^ï¿½Ì“Çï¿½ï¿½ï¿½ */
  fscanf(file, "%d", &n);
  if(n>N) 
    {
@@ -27,51 +27,51 @@ main()
  for(i=0; i<n; i++) fscanf(file, "%d", &A[i]);
  for(i=0; i<n; i++) printf("%d ", A[i]);
  printf("\nA = ");
- heapsort(A, n);                /* ƒq[ƒvƒ\[ƒg‚É‚æ‚é”z—ñA‚Ì®—ñ */
+ heapsortt(A, n);                /* ï¿½qï¿½[ï¿½vï¿½\ï¿½[ï¿½gï¿½É‚ï¿½ï¿½zï¿½ï¿½Aï¿½Ìï¿½ï¿½ï¿½ */
  for(i=0; i<n; i++) printf("%d ",A[i]);
  printf("\n");
  return(0);
 }
 
-void heapsort(int *A, int n)
-/* ”z—ñA[0],...,A[n-1]‚ðƒq[ƒvƒ\[ƒg‚É‚æ‚è®—ñ */
+void heapsortt(int *A, int n)
+/* ï¿½zï¿½ï¿½A[0],...,A[n-1]ï¿½ï¿½ï¿½qï¿½[ï¿½vï¿½\ï¿½[ï¿½gï¿½É‚ï¿½è®ï¿½ï¿½ */
 {
  int i;
 
- heapify(A, n);         /* ƒq[ƒv‰»; ‚½‚¾‚µª‚ÍÅ‘å—v‘f‚ð‚à‚Â */
- for(i=n-1; i>0; i--) A[i]=deletemax(A, i+1);  /* Å‘å—v‘f‚ð––”ö‚Ö */
+ heapify(A, n);         /* ï¿½qï¿½[ï¿½vï¿½ï¿½; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍÅ‘ï¿½vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+ for(i=n-1; i>0; i--) A[i]=deletemax(A, i+1);  /* ï¿½Å‘ï¿½vï¿½fï¿½ð––”ï¿½ï¿½ï¿½ */
 }
 
 void heapify(int *A, int n)
-/* A[0],...,A[n-1]‚ðƒq[ƒv‰» */
+/* A[0],...,A[n-1]ï¿½ï¿½ï¿½qï¿½[ï¿½vï¿½ï¿½ */
 {
  int i;
  for(i=n/2-1; i>=0; i--) downmax(i, A, n);
 }
 
 void downmax(int i, int *A, int n)
-/* A[i]‚©‚ç‰º•û‚ÖAƒq[ƒv‚Ì«Ž¿‚ð‰ñ•œ‚·‚é‚½‚ß‚Ìswap‘€ì‚ð“K—p */
+/* A[i]ï¿½ï¿½ï¿½ç‰ºï¿½ï¿½ï¿½ÖAï¿½qï¿½[ï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñ•œ‚ï¿½ï¿½é‚½ï¿½ß‚ï¿½swapï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½p */
 {
  int j;
 
- j=2*i+1;               /* i‚Ì¶‚ÌŽq */ 
+ j=2*i+1;               /* iï¿½Ìï¿½ï¿½ÌŽq */ 
  if(j>=n) return;
- if(j+1<n && A[j]<A[j+1]) j=j+1;   /* j: i‚ÌŽq‚Å‘å‚«‚È’l‚ðŽ‚Â•û */
- if(A[j]>A[i])          /* i‚Æj‚ÌŒðŠ· */
+ if(j+1<n && A[j]<A[j+1]) j=j+1;   /* j: iï¿½ÌŽqï¿½Å‘å‚«ï¿½È’lï¿½ï¿½ï¿½ï¿½ï¿½Â•ï¿½ */
+ if(A[j]>A[i])          /* iï¿½ï¿½jï¿½ÌŒï¿½ï¿½ï¿½ */
    {
     swap(i, j, A);
-    downmax(j, A, n);   /* j‚Ì‰º•û‚ÖÄ‹A“IŽÀs */
+    downmax(j, A, n);   /* jï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ÖÄ‹Aï¿½Iï¿½ï¿½ï¿½s */
    }
  return;
 }
 
 int deletemax(int *A, int n)
-/* ƒq[ƒvA[0],...,A[n-1]‚©‚çÅ‘å—v‘fA[0]‚Ìo—Í‚Æœ‹Ž */
+/* ï¿½qï¿½[ï¿½vA[0],...,A[n-1]ï¿½ï¿½ï¿½ï¿½Å‘ï¿½vï¿½fA[0]ï¿½Ìoï¿½Í‚Æï¿½ï¿½ï¿½ */
 {
  int max;
 
- max=A[0]; A[0]=A[n-1]; /* A[0]‚Ìo—Í‚ÆA[n-1]‚ÌˆÚ“® */
- downmax(0, A, n-1);    /* ƒq[ƒvðŒ‚Ì‰ñ•œ‚Ì‚½‚ß‰º‚Ö */
+ max=A[0]; A[0]=A[n-1]; /* A[0]ï¿½Ìoï¿½Í‚ï¿½A[n-1]ï¿½ÌˆÚ“ï¿½ */
+ downmax(0, A, n-1);    /* ï¿½qï¿½[ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ñ•œ‚Ì‚ï¿½ï¿½ß‰ï¿½ï¿½ï¿½ */
  return(max);
 }
 
